@@ -75,7 +75,7 @@ const readFilesContent = async (filesArr, dirPath) => {
   for (const file of filesArr) {
     const filePath = path.join(dirPath, file);
     const content = await readContent(filePath);
-    contentArr.push(content);
+    contentArr.push(content + '\n\n');
   }
   return contentArr;
 };
