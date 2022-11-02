@@ -32,7 +32,9 @@ const receiveMsg = (rl, input) => {
 };
 
 const writeMsg = (writeStream, input) => {
-  writeStream.write(`${input}\n`);
+  if (!isExit(input)) {
+    writeStream.write(`${input}\n`);
+  }
 };
 
 const writeFile = () => {
